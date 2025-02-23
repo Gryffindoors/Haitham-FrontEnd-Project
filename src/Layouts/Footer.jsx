@@ -9,7 +9,7 @@ export default function Footer() {
       <div className="flex py-5">
         <div className="flex flex-col md:flex-row gap-5 px-3">
           {/* Company Info */}
-          <div className="flex flex-col gap-3 mx-auto w-[30%]">
+          <div className="flex flex-col gap-3 mx-auto w-full md:w-[30%]">
             <h4 className="company-name flex md:text-3xl text-sm items-center">
               <img loading="lazy" src={images.CoLogo} alt="company logo" className="h-16 w-auto me-3" />
               Fork & Leaf
@@ -25,7 +25,7 @@ export default function Footer() {
           </div>
 
           {/* Pages List */}
-          <div className="flex flex-col gap-3 mx-auto w-[15%]">
+          <div className="flex flex-col gap-3 mx-auto w-full md:w-[15%]">
             <h4 className="flex font-bold text-xl items-center">Pages</h4>
             <ul className="list-none flex flex-col gap-3">
               {navigation.map((item) => (
@@ -35,7 +35,7 @@ export default function Footer() {
           </div>
 
           {/* Utilities List */}
-          <div className="flex flex-col gap-3 mx-auto w-[15%]">
+          <div className="flex flex-col gap-3 mx-auto w-full md:w-[15%]">
             <h4 className="flex font-bold text-xl items-center">Utilities</h4>
             <ul className="list-none flex flex-col gap-3">
               {otherPages.map((item) => (
@@ -45,7 +45,7 @@ export default function Footer() {
           </div>
 
           {/* Image Grid */}
-          <div className="flex flex-col gap-2 mx-auto w-[30%]">
+          <div className="flex flex-col gap-2 mx-auto w-full md:w-[30%]">
             <h4 className="flex font-bold text-xl items-center">Follow us on Instagram</h4>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
               <a href="#">
