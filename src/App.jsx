@@ -1,5 +1,5 @@
 import React, { lazy, Suspense } from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router';
 import { AuthProvider } from './Context/AuthContext';
 import ThemeProvider from './Context/ThemeContext';
 import Navbar from './Layouts/Navbar';
