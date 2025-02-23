@@ -17,7 +17,7 @@ export default function Footer() {
             <p className="italic text-sm">
               Leaf & Fork is your go-to destination for fresh, wholesome, and deliciously healthy food. We believe in nourishing the body with natural ingredients, sustainable choices, and flavors that inspire. Eat well, live well, and enjoy every bite!
             </p>
-            <div className="flex flex-col my-3 w-2/3 mx-auto md:flex-row gap-4 px-3">
+            <div className="flex flex-col my-3 w-2/3 mx-auto flex-row gap-4 px-3">
               {socialMedia.map((item) => (
                 <SocialLinks key={item.name} item={item} />
               ))}
