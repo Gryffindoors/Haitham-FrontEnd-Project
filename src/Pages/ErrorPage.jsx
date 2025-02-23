@@ -9,7 +9,7 @@ export default function ErrorPage() {
             <img loading="lazy" src={images.full2Ls} alt="" className="absolute -z-10 opacity-50 -top-32 object-contain"/>
 
             {/* Error message (auto height adjustment) */}
-            <div className="flex-grow flex flex-col items-center justify-center text-center py-28">
+            <div className="flex-grow flex flex-col items-center justify-center text-center -z-0 py-28">
                 <h1 className="text-[#F9F9F7] text-4xl font-bold">404 - Page Not Found</h1>
                 <p className="text-[#F9F9F7] text-lg mt-4">Oops! The page you're looking for doesn't exist.</p>
                 <Link

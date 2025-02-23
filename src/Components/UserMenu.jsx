@@ -161,7 +161,7 @@ export default function UserMenu() {
 
       {/* Sign Up / Sign In Modal */}
       {showAuthModal && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black/50">
+        <div className="fixed z-50 inset-0 flex items-center justify-center bg-black/50">
           <div ref={modalRef} className="bg-white dark:bg-gray-800 p-5 rounded-lg shadow-lg w-96">
             <h2 className="text-lg font-bold text-gray-800 dark:text-white mb-3">
               {isSignUp ? "Sign Up" : "Sign In"}
