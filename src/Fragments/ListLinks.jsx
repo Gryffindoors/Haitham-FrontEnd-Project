@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 export default function ListLinks({ item }) {
   return <>
 
-    <li><Link to={item.href} className='dark:text-gray-800 text-[#F9F9F7]'>{item.name}</Link></li>
+    <li><Link to={item.href} className=' text-[#F9F9F7]'>{item.name}</Link></li>
 
 
   </>

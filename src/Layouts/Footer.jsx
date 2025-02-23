@@ -1,20 +1,18 @@
-import React from 'react'
-
+import React from 'react';
 import images from "../Constants/Images";
 import ListLinks, { SocialLinks } from '../Fragments/ListLinks';
 import { navigation, otherPages, socialMedia } from '../Constants/PagesLinks';
 
-
 export default function Footer() {
   return (
-    <div className='bg-gray-800 dark:bg-[#F9F9F7] text-[#F9F9F7] dark:text-gray-800'>
-
-      <div className="flex  py-5">
+    <div className='bg-gray-800 text-[#F9F9F7]'>
+      <div className="flex py-5">
         <div className="flex flex-col md:flex-row gap-5 px-3">
           {/* Company Info */}
           <div className="flex flex-col gap-3 mx-auto w-[30%]">
             <h4 className="company-name flex md:text-3xl text-sm items-center">
-              <img loading="lazy" src={images.CoLogo} alt="company logo" className="h-16 w-auto me-3" />Fork & Leaf
+              <img loading="lazy" src={images.CoLogo} alt="company logo" className="h-16 w-auto me-3" />
+              Fork & Leaf
             </h4>
             <p className="italic text-sm">
               Leaf & Fork is your go-to destination for fresh, wholesome, and deliciously healthy food. We believe in nourishing the body with natural ingredients, sustainable choices, and flavors that inspire. Eat well, live well, and enjoy every bite!
@@ -66,8 +64,9 @@ export default function Footer() {
           </div>
         </div>
       </div>
-        <p className='text-xs text-center text-[#F9F9F7] dark:text-gray-800 py-5'><span className='text-sm text-red-500'>&copy;</span> Copyrights Reserved 2025, Haitham Elfowaty - Aspiring Full-Stack Developer</p>
+      <p className='text-xs text-center text-[#F9F9F7] py-5'>
+        <span className='text-sm text-red-500'>&copy;</span> Copyrights Reserved 2025, Haitham Elfowaty - Aspiring Full-Stack Developer
+      </p>
     </div>
-
-  )
+  );
 }
