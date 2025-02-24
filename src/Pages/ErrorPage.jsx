@@ -13,7 +13,7 @@ export default function ErrorPage() {
                 <h1 className="text-[#F9F9F7] text-4xl font-bold">404 - Page Not Found</h1>
                 <p className="text-[#F9F9F7] text-lg mt-4">Oops! The page you're looking for doesn't exist.</p>
                 <Link
-                    to="/"
+                    onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} to="/"
                     className="mt-6 px-6 py-2 bg-gray-900 text-[#F9F9F7] rounded-md hover:bg-gray-700 transition duration-200 shadow-md"
                 >
                     Go Back Home

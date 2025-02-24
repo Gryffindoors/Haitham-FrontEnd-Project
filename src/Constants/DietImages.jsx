@@ -1,9 +1,9 @@
 // @ts-nocheck
-import Keto from '../assets/images/keto.svg';
-import Vegan from '../assets/images/vegan.svg';
-import Atkins from '../assets/images/atkins.svg';
-import Smoothie from '../assets/images/smoothie.svg';
-import Sweets from '../assets/images/sweets.svg';
+import Keto from '../assets/images/Keto.svg';
+import Vegan from '../assets/images/Vegan.svg';
+import Atkins from '../assets/images/Atkins.svg';
+import Smoothie from '../assets/images/Smoothie.svg';
+import Sweets from '../assets/images/Sweets.svg';
 
 const DietImages = {
     "Keto Food": Keto,

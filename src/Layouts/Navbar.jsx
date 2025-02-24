@@ -64,7 +64,7 @@ export default function Navbar() {
                 {navigation.map((item) => (
                   <NavLink
                     key={item.name}
-                    to={item.href}
+                    onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} to={item.href}
                     className={({ isActive }) =>
                       classNames(
                         isActive

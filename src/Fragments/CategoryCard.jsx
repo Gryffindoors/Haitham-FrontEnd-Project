@@ -24,7 +24,7 @@ export default function CategoryCard({ item, disableLink = false }) {
                 </div>
             ) : (
                 // Enabled link: wrap in Link component
-                <Link to={`/category/${encodeURIComponent(item)}`} className="hover:underline">
+                <Link onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} to={`/category/${encodeURIComponent(item)}`} className="hover:underline">
                     <div className='p-3 bg-gray-200 rounded-full w-1/4 mx-auto'>
                         <img src={DietImages[item]} alt={item} className="w-full rounded-2xl h-fit aspect-square" />
                     </div>

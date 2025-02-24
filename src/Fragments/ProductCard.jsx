@@ -12,7 +12,7 @@ export default function ProductCard({ item }) {
 
       {/* Clickable Product Name */}
       <h3 className='text-2xl'>
-        <Link to={`/products/${item.product_code}`} className="hover:underline">
+        <Link onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} to={`/products/${item.product_code}`} className="hover:underline">
           {item.product_name}
         </Link>
       </h3>

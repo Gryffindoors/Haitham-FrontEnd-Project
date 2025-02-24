@@ -27,8 +27,8 @@ export default function Home() {
         <h2 className='text-center text-xl md:text-3xl font-bold my-7'>Only the best for you</h2>
         <p className='text-center font-bold w-full md:w-1/4 mx-auto'>Discover your palate, Healthy food no longer equals unappetizine</p>
         <div className="flex flex-row w-full md:w-1/2 p-3 mx-auto gap-5 items-center justify-around">
-          <Link to="/favourites"><button className='border-2 border-gray-900 dark:border-[#F9F9F7] bg-red-600 text-[#F9F9F7] dark:bg-[#F9F9F7] dark:text-red-600 rounded-full p-5 cursor-pointer hover:scale-[1.05] duration-1000 text-sm'>Order your meal </button></Link>
-          <Link to="/products"><button className='border-2 border-gray-900 dark:border-[#F9F9F7] dark:bg-red-600 dark:text-[#F9F9F7] bg-[#F9F9F7] text-red-600 rounded-full p-5 cursor-pointer hover:scale-[1.05] duration-1000 text-sm'>Explore the menu</button></Link>
+          <Link onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} to="/favourites"><button className='border-2 border-gray-900 dark:border-[#F9F9F7] bg-red-600 text-[#F9F9F7] dark:bg-[#F9F9F7] dark:text-red-600 rounded-full p-5 cursor-pointer hover:scale-[1.05] duration-1000 text-sm'>Order your meal </button></Link>
+          <Link onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} to="/products"><button className='border-2 border-gray-900 dark:border-[#F9F9F7] dark:bg-red-600 dark:text-[#F9F9F7] bg-[#F9F9F7] text-red-600 rounded-full p-5 cursor-pointer hover:scale-[1.05] duration-1000 text-sm'>Explore the menu</button></Link>
         </div>
       </div>
 
