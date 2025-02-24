@@ -37,7 +37,7 @@ export default function Navbar() {
   };
 
   return (
-    <Disclosure as="nav" className="bg-[#F9F9F7] dark:bg-gray-800">
+    <Disclosure as="nav" className="bg-[#F9F9F7] z-50 w-full dark:bg-gray-800 sticky top-0">
       <div className="mx-auto px-2 sm:px-6 lg:px-24">
         <div className="relative flex h-16 items-center justify-between">
           {/* Mobile Menu Button & Icons */}
@@ -55,6 +55,7 @@ export default function Navbar() {
             {/* Logo */}
             <div className="flex shrink-0 items-center">
               <img loading="lazy" alt="Healthy Foods Logo" src={images.CoLogo} className="h-10 w-auto" />
+              <h4 className="company-name flex md:text-xl ms-3 text-sm items-center dark:text-[#F9F9F7] text-gray-900">Fork & Leaf</h4>
             </div>
 
             {/* Navigation Links */}
@@ -95,7 +96,7 @@ export default function Navbar() {
               </button>
 
               {/* Profile Dropdown */}
-              <UserMenu/>
+              <UserMenu />
             </div>
           </div>
         </div>
