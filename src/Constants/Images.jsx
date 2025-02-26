@@ -19,6 +19,8 @@ import meal1sq from "../assets/images/meal1sq.webp";
 import meal2sq from "../assets/images/meal2sq.webp";
 import meal3sq from "../assets/images/meal3sq.webp";
 import meal4sq from "../assets/images/meal4sq.webp";
+import meal5sq from "../assets/images/meal5sq.webp";
+import meal6sq from "../assets/images/meal6sq.webp";
 import CoLogo from "../assets/images/HealthyLogo.svg";
 
 const images = {
@@ -43,6 +45,8 @@ const images = {
   meal2sq,
   meal3sq,
   meal4sq,
+  meal5sq,
+  meal6sq,
 };
 
 export default images;

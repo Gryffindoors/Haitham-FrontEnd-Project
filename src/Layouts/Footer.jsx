@@ -1,9 +1,10 @@
 import React from 'react';
 import images from "../Constants/Images";
 import ListLinks, { SocialLinks } from '../Fragments/ListLinks';
-import { navigation, otherPages, socialMedia } from '../Constants/PagesLinks';
+import { useNavigation, otherPages, socialMedia } from '../Constants/PagesLinks';
 
 export default function Footer() {
+    const navigation = useNavigation();
   return (
     <div className='bg-gray-800 text-[#F9F9F7]'>
       <div className="flex py-5">
@@ -47,18 +48,24 @@ export default function Footer() {
           {/* Image Grid */}
           <div className="flex flex-col gap-2 mx-auto w-full md:w-[30%]">
             <h4 className="flex font-bold text-xl items-center">Follow us on Instagram</h4>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
               <a href="#">
-                <img loading="lazy" src={images.meal1sq} alt="Meal1" className="w-1/2 border-amber-300 border-2 rounded-3xl hover:scale-[1.01] duration-300 ease-in-out" />
+                <img loading="lazy" src={images.meal1sq} alt="Meal1" className="w-full border-amber-300 border-2 rounded-3xl hover:scale-[1.05] duration-300 ease-in-out m-auto aspect-square" />
               </a>
               <a href="#">
-                <img loading="lazy" src={images.meal2sq} alt="Meal2" className="w-1/2 border-amber-300 border-2 rounded-3xl hover:scale-[1.01] duration-300 ease-in-out" />
+                <img loading="lazy" src={images.meal2sq} alt="Meal2" className="w-full border-amber-300 border-2 rounded-3xl hover:scale-[1.05] duration-300 ease-in-out m-auto aspect-square" />
               </a>
               <a href="#">
-                <img loading="lazy" src={images.meal3sq} alt="Meal3" className="w-1/2 border-amber-300 border-2 rounded-3xl hover:scale-[1.01] duration-300 ease-in-out" />
+                <img loading="lazy" src={images.meal3sq} alt="Meal3" className="w-full border-amber-300 border-2 rounded-3xl hover:scale-[1.05] duration-300 ease-in-out m-auto aspect-square" />
               </a>
               <a href="#">
-                <img loading="lazy" src={images.meal4sq} alt="Meal4" className="w-1/2 border-amber-300 border-2 rounded-3xl hover:scale-[1.01] duration-300 ease-in-out" />
+                <img loading="lazy" src={images.meal4sq} alt="Meal4" className="w-full border-amber-300 border-2 rounded-3xl hover:scale-[1.05] duration-300 ease-in-out m-auto aspect-square" />
+              </a>
+              <a href="#">
+                <img loading="lazy" src={images.meal5sq} alt="Meal5" className="w-full border-amber-300 border-2 rounded-3xl hover:scale-[1.05] duration-300 ease-in-out m-auto aspect-square" />
+              </a>
+              <a href="#">
+                <img loading="lazy" src={images.meal6sq} alt="Meal6" className="w-full border-amber-300 border-2 rounded-3xl hover:scale-[1.05] duration-300 ease-in-out m-auto aspect-square" />
               </a>
             </div>
           </div>

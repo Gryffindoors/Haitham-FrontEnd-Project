@@ -1,3 +1,5 @@
+import { ProductContext } from "../APIContext/ProductContext";
+import { useContext } from "react";
 import { FaDiscord, FaFacebook, FaInstagram, FaReddit, FaTwitter } from "react-icons/fa";
 
 export const otherPages = [
@@ -10,14 +12,26 @@ export const otherPages = [
 
 ];
 
-
-export const navigation = [
-    { name: "Home", href: "/", current: false },
-    { name: "Products", href: "/products", current: false },
-    { name: "My favourites", href: "/favourites", current: false },
-    { name: "Cart", href: "/cart", current: false },
-    { name: "Signup", href: "/signup", current: false},
-];
+export function useNavigation() {
+    const { categories } = useContext(ProductContext);
+  
+    return [
+      { name: "Home", href: "/" },
+      { name: "Products",
+        dropdown: [
+          { name: "All Products", href: "/products" },
+          ...categories.map((category) => ({
+            name: category,
+            href: `/category/${category}`,
+          })),
+        ],
+      },
+      { name: "Favourites", href: "/favourites" },
+      { name: "Cart", href: "/cart" },
+      { name: "ٍSignup", href: "/signup" },
+      
+    ];
+  }
 
 export const socialMedia = [
     { id: 1, href: "#", icon: FaTwitter, name: "Twitter"},

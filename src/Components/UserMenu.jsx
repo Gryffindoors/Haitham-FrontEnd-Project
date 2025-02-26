@@ -6,7 +6,7 @@ import ProfileImg from "../Constants/ProfileImg";
 import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
 
 export default function UserMenu() {
-  const { user, login, logout } = useContext(AuthContext);
+  const { user, signup, login, logout } = useContext(AuthContext);
   const [showAuthModal, setShowAuthModal] = useState(false);
   const [isSignUp, setIsSignUp] = useState(true); // Toggle between Sign Up and Sign In
   const [selectedProfile, setSelectedProfile] = useState("v1");
@@ -30,7 +30,7 @@ export default function UserMenu() {
     }
   }, [showAuthModal, isSignUp]);
 
-  // Formik for Sign Up
+  // ✅ API-based Sign Up Formik
   const signUpFormik = useFormik({
     initialValues: { username: "", password: "" },
     validationSchema: Yup.object({
@@ -41,34 +41,26 @@ export default function UserMenu() {
         .matches(/^\d+$/, "Password must contain only numbers")
         .required("Password is required"),
     }),
-    onSubmit: (values) => {
-      const newUser = {
-        username: values.username,
-        password: values.password,
-        profileImg: ProfileImg[selectedProfile],
-      };
+    onSubmit: async (values, { setFieldError }) => {
+      try {
+        const { success, message } = await signup({
+          username: values.username,
+          profileImage: ProfileImg[selectedProfile], // Send selected profile image
+        });
 
-      // Retrieve existing users from localStorage
-      const existingUsers = JSON.parse(localStorage.getItem("users")) || [];
+        if (!success) {
+          setFieldError("username", message); // Show API error if signup fails
+          return;
+        }
 
-      // Check if the username already exists
-      const userExists = existingUsers.some((user) => user.username === values.username);
-      if (userExists) {
-        signUpFormik.setFieldError("username", "Username already exists");
-        return;
+        setShowAuthModal(false); // Close modal on success
+      } catch (error) {
+        setFieldError("username", "Signup failed. Please try again.");
       }
-
-      // Add the new user to the list
-      const updatedUsers = [...existingUsers, newUser];
-      localStorage.setItem("users", JSON.stringify(updatedUsers));
-
-      // Log the user in
-      login(newUser);
-      setShowAuthModal(false);
     },
   });
 
-  // Formik for Sign In
+  // ✅ API-based Sign In Formik
   const signInFormik = useFormik({
     initialValues: { username: "", password: "" },
     validationSchema: Yup.object({
@@ -79,26 +71,22 @@ export default function UserMenu() {
         .matches(/^\d+$/, "Password must contain only numbers")
         .required("Password is required"),
     }),
-    onSubmit: (values, { setFieldError }) => {
-      // Retrieve all users from localStorage
-      const existingUsers = JSON.parse(localStorage.getItem("users")) || [];
+    onSubmit: async (values, { setFieldError }) => {
+      try {
+        const { success, message } = await login({
+          email: `${values.username}@mail.com`, // Convert username to email
+          password: values.password,
+        });
 
-      // Find the user with the matching username
-      const storedUser = existingUsers.find((user) => user.username === values.username);
-      if (!storedUser) {
-        setFieldError("username", "Username not found");
-        return;
+        if (!success) {
+          setFieldError("password", message); // Show API error
+          return;
+        }
+
+        setShowAuthModal(false); // Close modal on success
+      } catch (error) {
+        setFieldError("password", "Login failed. Please try again.");
       }
-
-      // Check if the password matches
-      if (storedUser.password !== values.password) {
-        setFieldError("password", "Incorrect password");
-        return;
-      }
-
-      // Log the user in
-      login(storedUser);
-      setShowAuthModal(false);
     },
   });
 
@@ -108,7 +96,7 @@ export default function UserMenu() {
         <span className="sr-only">Open user menu</span>
         <img
           alt="Profile"
-          src={user ? user.profileImg : ProfileImg.v1}
+          src={user ? user.customer_prefrences : ProfileImg.v1}
           className="size-8 rounded-full"
           loading="lazy"
         />
@@ -119,7 +107,7 @@ export default function UserMenu() {
           <>
             <MenuItem>
               <a href="#" className="block px-4 py-2 text-sm text-gray-700 dark:text-white">
-                {user.username || "Your Profile"}
+                {user ? `${user.first_name} ${user.last_name}` : "Your Profile"}
               </a>
             </MenuItem>
             <MenuItem>
@@ -198,33 +186,18 @@ export default function UserMenu() {
                       key={key}
                       src={ProfileImg[key]}
                       alt={`Profile ${key}`}
-                      className={`size-10 rounded-full cursor-pointer ${
-                        selectedProfile === key ? "ring-2 ring-blue-500" : ""
-                      }`}
+                      className={`size-10 rounded-full cursor-pointer ${selectedProfile === key ? "ring-2 ring-blue-500" : ""
+                        }`}
                       onClick={() => setSelectedProfile(key)}
                     />
                   ))}
                 </div>
               )}
 
-              <button
-                type="submit"
-                className="w-full py-2 rounded-lg bg-blue-500 text-white hover:bg-blue-600"
-              >
+              <button type="submit" className="w-full py-2 rounded-lg bg-blue-500 text-white hover:bg-blue-600">
                 {isSignUp ? "Create Account" : "Sign In"}
               </button>
             </form>
-
-            {/* Toggle between Sign In and Sign Up */}
-            <p className="text-sm mt-3 text-gray-700 dark:text-white">
-              {isSignUp ? "Already have an account? " : "Don't have an account? "}
-              <button
-                onClick={() => setIsSignUp(!isSignUp)}
-                className="text-blue-500 hover:text-blue-600"
-              >
-                {isSignUp ? "Sign In" : "Sign Up"}
-              </button>
-            </p>
           </div>
         </div>
       )}

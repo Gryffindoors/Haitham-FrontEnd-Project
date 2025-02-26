@@ -5,6 +5,7 @@ import ThemeProvider from './Context/ThemeContext';
 import Navbar from './Layouts/Navbar';
 import Footer from './Layouts/Footer';
 import { ProductContextProvider } from './APIContext/ProductContext';
+import { FavouritesContextProvider } from './Context/FavouritesContext';
 
 // Lazy-loaded pages
 const Home = lazy(() => import('./Pages/Home'));
@@ -17,27 +18,31 @@ const Category = lazy(() => import('./Pages/Category'));
 
 function App() {
   return (
-    <ProductContextProvider>
-      <AuthProvider>
-        <ThemeProvider>
-          <BrowserRouter>
-            <Navbar />
-            <Suspense fallback={<div className="flex items-center justify-center h-screen">Loading...</div>}>
-              <Routes>
-                <Route index element={<Home />} />
-                <Route path="/products" element={<Products />} />
-                <Route path="/productdetails/:id" element={<ProductDetails />} />
-                <Route path="/favourites" element={<Favourites />} />
-                <Route path="/cart" element={<Cart />} />
-                <Route path="/category/:categoryName" element={<Category />} />
-                <Route path="/*" element={<ErrorPage />} />
-              </Routes>
-            </Suspense>
-            <Footer />
-          </BrowserRouter>
-        </ThemeProvider>
-      </AuthProvider>
-    </ProductContextProvider>
+    <AuthProvider>
+      <FavouritesContextProvider>
+        <ProductContextProvider>
+          <ThemeProvider>
+            <BrowserRouter>
+              <Navbar />
+              <main className="flex-1">
+                <Suspense fallback={<div className="flex items-center justify-center h-screen">Loading...</div>}>
+                  <Routes>
+                    <Route index element={<Home />} />
+                    <Route path="/products" element={<Products />} />
+                    <Route path="/products/:id" element={<ProductDetails />} />
+                    <Route path="/favourites" element={<Favourites />} />
+                    <Route path="/cart" element={<Cart />} />
+                    <Route path="/category/:categoryName" element={<Category />} />
+                    <Route path="/*" element={<ErrorPage />} />
+                  </Routes>
+                </Suspense>
+              </main>
+              <Footer />
+            </BrowserRouter>
+          </ThemeProvider>
+        </ProductContextProvider>
+      </FavouritesContextProvider>
+    </AuthProvider>
   );
 }
 

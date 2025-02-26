@@ -1,13 +1,21 @@
-import { Link } from 'react-router'; // Ensure correct import
+// @ts-nocheck
+import { Link } from 'react-router';
 import React from 'react';
+import { IoIosCart } from "react-icons/io";
+import { GiSelfLove } from "react-icons/gi";
+import FavouriteButton from './Buttons';
+
 
 export default function ProductCard({ item }) {
   return (
-    <div className='text-center p-3 rounded-2xl border-2 border-gray-900 dark:border-[#F9F9F7] dark:text-[#F9F9F7] text-gray-900 flex flex-col gap-3 justify-between content-center'>
-      
+    <div className='relative text-center p-3 rounded-2xl border-2 border-gray-900 dark:border-[#F9F9F7] dark:text-[#F9F9F7] text-gray-900 flex flex-col gap-3 justify-between content-center'>
+      <FavouriteButton product={item} />
+      <button className='p-3 text-xl absolute top-5 end-3 rounded-full text-[#F9F9F7] dark:text-gray-900 bg-gray-900 dark:bg-[#F9F9F7]'>
+        <IoIosCart />
+      </button>
       {/* Product Image */}
       <div className='p-3 bg-gray-200 rounded-full w-1/4 mx-auto'>
-        <img src={item.image} alt={item.product_name} className="w-full rounded-2xl h-fit aspect-square" />
+        <img src={item.image} alt={item.product_name} className="w-full rounded-full  h-fit aspect-square" />
       </div>
 
       {/* Clickable Product Name */}
