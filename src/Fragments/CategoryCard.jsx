@@ -17,7 +17,7 @@ export default function CategoryCard({ item, disableLink = false }) {
             {/* Conditional Wrapper for Image + Title */}
             {disableLink ? (
                 <div>
-                    <div className="p-4 bg-gray-100 dark:bg-gray-700 rounded-xl w-2/5 md:w-1/3 mx-auto shadow-sm transition-transform hover:scale-105">
+                    <div className="p-4 bg-gray-100 dark:bg-[#F9F9F7] rounded-xl w-2/5 md:w-1/3 mx-auto shadow-sm transition-transform hover:scale-105">
                         <img src={DietImages[item]} alt={item} className="w-full rounded-lg object-cover aspect-square" />
                     </div>
                     <h3 className="text-lg md:text-xl font-semibold">{item}</h3>

@@ -30,7 +30,7 @@ export default function Category() {
     <div className="bg-white dark:bg-gray-800 dark:text-[#F9F9F7] text-black relative overflow-hidden py-5 px-3">
       
       {/* Selected Category Card */}
-      <div className='w-1/4 mx-auto my-3'>
+      <div className='w-4/5 md:w-1/4 mx-auto my-3'>
         {/* Disable link for the selected category */}
         <CategoryCard item={categoryName} disableLink={true} />
       </div>
