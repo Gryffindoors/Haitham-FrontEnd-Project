@@ -12,14 +12,13 @@ export default function FavouriteButton({ product }) {
   return (
     <button
       onClick={() => toggleFavourite(product)}
-      className={`p-3 text-xl absolute top-5 start-3 rounded-full 
-        ${isFav 
-          ? "text-red-500 dark:text-red-400 bg-gray-200 dark:bg-gray-800" 
-          : "text-[#F9F9F7] dark:text-gray-900 bg-gray-900 dark:bg-[#F9F9F7]"}
-      `}
-    >
+      className={`p-3 text-xl absolute top-4 left-4 rounded-full cursor-pointer shadow-md transition
+    ${isFav
+          ? "text-red-500 dark:text-red-400 bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700"
+          : "text-white dark:text-gray-900 bg-gray-900 dark:bg-[#F9F9F7] hover:bg-gray-700 dark:hover:bg-gray-300"}`}    >
       <GiSelfLove />
     </button>
+
   );
 }
 

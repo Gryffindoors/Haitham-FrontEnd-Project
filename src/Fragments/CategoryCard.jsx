@@ -12,26 +12,30 @@ const DietDescriptions = {
 
 export default function CategoryCard({ item, disableLink = false }) {
     return (
-        <div className='text-center p-3 rounded-2xl border-2 border-gray-900 dark:border-[#F9F9F7] dark:text-[#F9F9F7] text-gray-900 flex flex-col gap-3 justify-between content-center'>
-            {/* Wrap image + title in Link conditionally */}
+        <div className="text-center p-5 rounded-xl border border-gray-300 dark:border-gray-600 dark:text-[#F9F9F7] text-gray-900 flex flex-col gap-4 justify-between shadow-lg hover:shadow-xl transition-all duration-300 bg-white dark:bg-gray-800">
+            
+            {/* Conditional Wrapper for Image + Title */}
             {disableLink ? (
-                // Disabled link: render as plain div
                 <div>
-                    <div className='p-3 bg-gray-200 rounded-full w-1/4 mx-auto'>
-                        <img src={DietImages[item]} alt={item} className="w-full rounded-2xl h-fit aspect-square" />
+                    <div className="p-4 bg-gray-100 dark:bg-gray-700 rounded-xl w-2/5 md:w-1/3 mx-auto shadow-sm transition-transform hover:scale-105">
+                        <img src={DietImages[item]} alt={item} className="w-full rounded-lg object-cover aspect-square" />
                     </div>
-                    <h3 className='text-2xl'>{item}</h3>
+                    <h3 className="text-lg md:text-xl font-semibold">{item}</h3>
                 </div>
             ) : (
-                // Enabled link: wrap in Link component
                 <Link onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} to={`/category/${encodeURIComponent(item)}`} className="hover:underline">
-                    <div className='p-3 bg-gray-200 rounded-full w-1/4 mx-auto'>
-                        <img src={DietImages[item]} alt={item} className="w-full rounded-2xl h-fit aspect-square" />
+                    <div className="p-4 bg-gray-100 dark:bg-gray-700 rounded-xl w-2/5 md:w-1/3 mx-auto shadow-sm transition-transform hover:scale-105">
+                        <img src={DietImages[item]} alt={item} className="w-full rounded-lg object-cover aspect-square" />
                     </div>
-                    <h3 className='text-2xl'>{item}</h3>
+                    <h3 className="text-lg md:text-xl font-semibold">{item}</h3>
                 </Link>
             )}
-            <p>{DietDescriptions[item]}</p>
+
+            {/* Category Description */}
+            <p className="text-sm text-gray-800 dark:text-gray-300">
+                {DietDescriptions[item]}
+            </p>
+
         </div>
     );
 }

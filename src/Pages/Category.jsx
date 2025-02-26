@@ -27,7 +27,7 @@ export default function Category() {
 
 
   return (
-    <div className="bg-white dark:bg-gray-800 dark:text-[#F9F9F7] text-black relative overflow-hidden py-5">
+    <div className="bg-white dark:bg-gray-800 dark:text-[#F9F9F7] text-black relative overflow-hidden py-5 px-3">
       
       {/* Selected Category Card */}
       <div className='w-1/4 mx-auto my-3'>
@@ -36,7 +36,7 @@ export default function Category() {
       </div>
 
       {/* Products Swiper */}
-      <div className="mb-10">
+      <div className="mb-10 ">
         <h2 className="text-3xl font-bold mb-4 text-center">{categoryName}</h2>
 
         <Swiper
