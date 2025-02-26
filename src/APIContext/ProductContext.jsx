@@ -18,7 +18,7 @@ export function ProductContextProvider({ children }) {
 
   useEffect(() => {
     setLoading(true);
-    AxiosInstance.get("/category")
+    AxiosInstance.get("category")
       .then((resp) => {
         const categoryData = resp.data.data || [];
 

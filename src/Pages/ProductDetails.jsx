@@ -33,10 +33,10 @@ export default function ProductDetails() {
       <img src={images.rightEmptyPt} alt="Background Image" className="absolute -z-10 h-full opacity-70 dark:opacity-90 -top-1/2" />
 
       <div id={"product" + product.product_code} className="max-w-[90%] mx-auto px-4 z-10 py-8">
-        <div className="bg-[#F9F9F7] dark:bg-gray-900 dark:text-[#F9F9F7] text-gray-900 rounded-lg shadow-lg p-6 flex flex-col items-center space-y-6">
+        <div className="bg-[#F9F9F7]/50 dark:bg-gray-900/50 dark:text-[#F9F9F7] text-gray-900 rounded-lg shadow-lg p-6 flex flex-col items-center space-y-6">
 
           {/* Product Image */}
-          <div className="bg-gray-200 dark:bg-gray-800 rounded-xl p-4 w-full max-w-md">
+          <div className="bg-gray-200/50 dark:bg-gray-800/50 rounded-xl p-4 w-full max-w-md">
             <img
               src={product.image}
               alt={product.product_name}
@@ -53,13 +53,13 @@ export default function ProductDetails() {
           </h3>
 
           {/* Product Nutrition Info */}
-          <div className="w-full bg-gray-100 dark:bg-gray-800 p-4 rounded-lg shadow-sm">
+          <div className="w-full bg-gray-100/50 dark:bg-gray-800/50 p-4 rounded-lg shadow-sm">
             <h3 className="text-xl font-semibold text-gray-700 dark:text-gray-300">Health Benefits</h3>
             <p className="text-gray-600 dark:text-gray-200">{product.product_nutrition_info}</p>
           </div>
 
           {/* Product Ingredients */}
-          <div className="w-full bg-gray-100 dark:bg-gray-800 p-4 rounded-lg shadow-sm">
+          <div className="w-full bg-gray-100/50 dark:bg-gray-800/50 p-4 rounded-lg shadow-sm">
             <h3 className="text-xl font-semibold text-gray-700 dark:text-gray-300">Ingredients</h3>
             <p className="text-gray-600 dark:text-gray-200">{product.product_ingredients}</p>
           </div>
