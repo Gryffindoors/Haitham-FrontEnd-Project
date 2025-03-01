@@ -65,7 +65,7 @@ export default function Cart() {
         // No Items Found Message
         <div className="flex flex-col items-center justify-center min-h-[30vh] text-center">
           <img 
-            src={images.emptyCart}  // Ensure this exists in `images.js`
+            src={images.emptyCart}  
             alt="Cart is Empty" 
             className="w-40 h-40 opacity-60 mb-4"
           />
