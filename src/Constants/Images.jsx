@@ -22,6 +22,8 @@ import meal4sq from "../assets/images/meal4sq.webp";
 import meal5sq from "../assets/images/meal5sq.webp";
 import meal6sq from "../assets/images/meal6sq.webp";
 import CoLogo from "../assets/images/HealthyLogo.svg";
+import emptyFavorites from "../assets/images/emptyFavorites.jpg";
+import emptyCart from "../assets/images/emptyCart.png";
 
 const images = {
   bottomEmptyLs,
@@ -47,6 +49,8 @@ const images = {
   meal4sq,
   meal5sq,
   meal6sq,
+  emptyFavorites,
+  emptyCart,
 };
 
 export default images;
