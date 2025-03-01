@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { CartContext } from "../Context/CartContext";
 import ProductCard from "../Fragments/ProductCard";
 import images from "../Constants/Images";
+import { IoIosCart } from "react-icons/io";
 
 export default function Cart() {
   const { cart } = useContext(CartContext);
@@ -67,10 +68,10 @@ export default function Cart() {
           <img 
             src={images.emptyCart}  
             alt="Cart is Empty" 
-            className="w-40 h-40 opacity-60 mb-4"
+            className="w-40 h-40 opacity-60 dark:bg-gray-200 dark:rounded-full mb-4"
           />
           <p className="text-lg font-medium text-gray-600 dark:text-gray-400">
-            Your cart is empty. Start shopping now! 🛒
+            Your cart is empty. Start shopping now! <IoIosCart className="inline" />
           </p>
         </div>
       )}

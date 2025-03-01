@@ -17,7 +17,7 @@ import {
   MoonIcon,
   ChevronDownIcon,
 } from "@heroicons/react/24/outline";
-import { NavLink } from "react-router";
+import { Link, NavLink } from "react-router";
 import ProfileImg from "../Constants/ProfileImg";
 import images from "../Constants/Images";
 import { ThemeContext } from "../Context/ThemeContext";
@@ -106,7 +106,9 @@ export default function Navbar() {
             <div className="hidden sm:flex items-center space-x-4">
               {/* Cart Icon */}
               <button className="p-2 text-gray-800 dark:text-gray-300">
-                <ShoppingCartIcon className="size-6" />
+                <Link to="/cart">
+                  <ShoppingCartIcon className="size-6" />
+                </Link>
               </button>
 
               {/* Theme Toggle */}
