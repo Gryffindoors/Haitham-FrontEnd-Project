@@ -20,6 +20,7 @@ export default function Home() {
 
   return (
     <>
+    
       <div className="bg-white/50 dark:bg-gray-600/50">
         {/* HERO SECTION */}
         <section className="relative bg-white/50 dark:bg-black/50 text-black dark:text-[#F9F9F7] overflow-hidden">

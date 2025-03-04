@@ -9,6 +9,8 @@ export default function Products() {
   return (
     <div className="relative overflow-hidden py-10 bg-white/50 dark:bg-gray-900/80 dark:text-[#F9F9F7] text-black">
       
+     
+
       {/* Background Overlay for Better Contrast */}
       <div className="absolute inset-0 -z-10 bg-black/10 dark:bg-black/40"></div>
 

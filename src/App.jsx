@@ -19,6 +19,7 @@ const Category = lazy(() => import('./Pages/Category'));
 
 function App() {
   return (
+
     <AuthProvider>
       <FavouritesContextProvider>
         <CartContextProvider>
